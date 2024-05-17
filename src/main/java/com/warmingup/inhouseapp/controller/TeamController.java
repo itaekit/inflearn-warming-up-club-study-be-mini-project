@@ -1,6 +1,6 @@
 package com.warmingup.inhouseapp.controller;
 
-import com.warmingup.inhouseapp.domain.team.TeamInfo;
+import com.warmingup.inhouseapp.dto.team.response.TeamInfoResponse;
 import com.warmingup.inhouseapp.dto.team.request.TeamCreateRequest;
 import com.warmingup.inhouseapp.service.TeamService;
 import org.springframework.web.bind.annotation.*;
@@ -23,7 +23,7 @@ public class TeamController {
     }
 
     @GetMapping
-    public List<TeamInfo> getAllTeamInfo() {
+    public List<TeamInfoResponse> getAllTeamInfo() {
         return teamService.getAllTeamInfo();
     }
 }

@@ -1,15 +1,17 @@
-package com.warmingup.inhouseapp.domain.member;
+package com.warmingup.inhouseapp.dto.member.response;
+
+import com.warmingup.inhouseapp.domain.member.Member;
 
 import java.time.LocalDate;
 
-public class MemberInfo {
+public class MemberInfoResponse {
     private String name;
     private String teamName;
     private String role;
     private LocalDate birthday;
     private LocalDate workStartDate;
 
-    public MemberInfo(Member member) {
+    public MemberInfoResponse(Member member) {
         this.name = member.getName();
         this.teamName = member.getTeamName();
         this.role = member.getIsManager() ? "MANAGER" : "MEMBER";

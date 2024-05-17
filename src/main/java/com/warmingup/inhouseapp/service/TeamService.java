@@ -3,7 +3,7 @@ package com.warmingup.inhouseapp.service;
 import com.warmingup.inhouseapp.domain.member.Member;
 import com.warmingup.inhouseapp.domain.member.MemberRepository;
 import com.warmingup.inhouseapp.domain.team.Team;
-import com.warmingup.inhouseapp.domain.team.TeamInfo;
+import com.warmingup.inhouseapp.dto.team.response.TeamInfoResponse;
 import com.warmingup.inhouseapp.domain.team.TeamRepository;
 import com.warmingup.inhouseapp.dto.team.request.TeamCreateRequest;
 import org.springframework.stereotype.Service;
@@ -35,9 +35,9 @@ public class TeamService {
     }
 
     @Transactional(readOnly = true)
-    public List<TeamInfo> getAllTeamInfo() {
+    public List<TeamInfoResponse> getAllTeamInfo() {
         List<Team> teamList = teamRepository.findAll();
-        List<TeamInfo> teamInfoList = new ArrayList<>();
+        List<TeamInfoResponse> teamInfoResponseList = new ArrayList<>();
 
         for (Team team : teamList) {
             String teamName = team.getName();
@@ -57,9 +57,9 @@ public class TeamService {
             }
 
             Long memberCount = memberList.stream().count();
-            teamInfoList.add(new TeamInfo(teamName, managerName, memberCount));
+            teamInfoResponseList.add(new TeamInfoResponse(teamName, managerName, memberCount));
         }
 
-        return teamInfoList;
+        return teamInfoResponseList;
     }
 }

@@ -1,7 +1,7 @@
 package com.warmingup.inhouseapp.service;
 
 import com.warmingup.inhouseapp.domain.member.Member;
-import com.warmingup.inhouseapp.domain.member.MemberInfo;
+import com.warmingup.inhouseapp.dto.member.response.MemberInfoResponse;
 import com.warmingup.inhouseapp.domain.member.MemberRepository;
 import com.warmingup.inhouseapp.domain.team.TeamRepository;
 import com.warmingup.inhouseapp.dto.member.request.MemberCreateRequest;
@@ -35,14 +35,14 @@ public class MemberService {
         memberRepository.save(new Member(request));
     }
 
-    public List<MemberInfo> getAllMemberInfo() {
+    public List<MemberInfoResponse> getAllMemberInfo() {
         List<Member> memberList = memberRepository.findAll();
-        List<MemberInfo> memberInfoList = new ArrayList<>();
+        List<MemberInfoResponse> memberInfoResponseList = new ArrayList<>();
 
         for (Member member : memberList) {
-            memberInfoList.add(new MemberInfo(member));
+            memberInfoResponseList.add(new MemberInfoResponse(member));
         }
 
-        return memberInfoList;
+        return memberInfoResponseList;
     }
 }

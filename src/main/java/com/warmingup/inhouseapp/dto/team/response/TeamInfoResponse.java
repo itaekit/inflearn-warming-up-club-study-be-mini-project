@@ -1,11 +1,11 @@
-package com.warmingup.inhouseapp.domain.team;
+package com.warmingup.inhouseapp.dto.team.response;
 
-public class TeamInfo {
+public class TeamInfoResponse {
     private String name;
     private String mananger;
     private Long memberCount;
 
-    public TeamInfo(String name, String mananger, Long memberCount) {
+    public TeamInfoResponse(String name, String mananger, Long memberCount) {
         this.name = name;
         this.mananger = mananger;
         this.memberCount = memberCount;
