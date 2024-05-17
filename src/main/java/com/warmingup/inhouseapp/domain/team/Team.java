@@ -13,7 +13,7 @@ public class Team {
 
     private String name;
 
-    public Team() {
+    protected Team() {
     }
 
     public Team(String name) {
