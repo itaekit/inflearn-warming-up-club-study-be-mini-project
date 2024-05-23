@@ -25,8 +25,6 @@ public class Member {
         this.isManager = request.getIsManager();
         this.workStartDate = request.getWorkStartDate();
         this.birthday = request.getBirthday();
-
-        System.out.println("2 > > > > " + isManager + " / " + request.getIsManager());
     }
 
     public String getName() {
